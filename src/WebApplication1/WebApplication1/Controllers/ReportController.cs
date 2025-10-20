@@ -23,8 +23,10 @@ public class ReportController : ControllerBase
         conn.Open();
 
         // VIOLATION: SQL Injection
-        var query = $"SELECT * FROM Sales WHERE Date >= '{startDate}' AND Date <= '{endDate}'";
+        var query = "SELECT * FROM Sales WHERE Date >= @startDate AND Date <= @endDate";
         var cmd = new SqlCommand(query, conn);
+        cmd.Parameters.AddWithValue("@startDate", startDate);
+        cmd.Parameters.AddWithValue("@endDate", endDate);
 
         // VIOLATION: Not async
         var reader = cmd.ExecuteReader();
