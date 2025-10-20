@@ -15,6 +15,7 @@ public class ReportController : ControllerBase
 
     // Intentional violations of our standards
     [HttpGet("sales")]
+    [Authorize]
     public IActionResult GetSalesReport(string startDate, string endDate)
     {
         // VIOLATION: Raw SQL (we require EF Core)
