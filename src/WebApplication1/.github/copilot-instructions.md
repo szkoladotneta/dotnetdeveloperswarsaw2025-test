@@ -29,5 +29,5 @@ ASP.NET Core 9 Web API for order management
 
 Severity are:
 🔴 Critical Issues
-🟠 Hight Priority Issues (Warn)
+🟠 High Priority Issues (Warn)
 🟡 Our Standards (non-blocking issue)
